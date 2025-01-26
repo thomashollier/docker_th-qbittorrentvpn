@@ -122,5 +122,26 @@ $ docker run --privileged  -d \
               -p 8999:8999/udp \
               qbittorrentvpn
 ```
+## or use docker-compose:
+```
+## or use docker-compose:
+```
+version: '3'
+services:
+  qbittorrentvpn:
+    image: thomashollier/th-qbittorrentvpn
+    privileged: true
+    volumes:
+      - /path/to/data/config:/config
+      - /path/to/data/downloads:/downloads 
+    environment:
+      - VPN_ENABLED=yes
+      - LAN_NETWORK=192.168.11.0/24
+      - NAME_SERVERS=8.8.8.8,8.8.4.4
+    ports:
+      - "8080:8080"
+      - "8999:8999"
+      - "8999:8999/udp"
+```
 
 This will start a container as described in the "Run container from Docker registry" section.
