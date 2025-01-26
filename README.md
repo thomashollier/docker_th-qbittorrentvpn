@@ -107,7 +107,10 @@ To build this container, clone the repository and cd into it.
 ## Build it:
 ```
 $ cd /repo/location/qbittorrentvpn
-$ docker build -t qbittorrentvpn .
+$ docker build -t DOCKER_USERNAME/th-qbittorrentvpn .
+$ docker login -u DOCKER_USERNAME
+$ docker push DOCKER_USERNAME/th-qbittorrentvpn
+
 ```
 ## Run it:
 ```
@@ -121,8 +124,6 @@ $ docker run --privileged  -d \
               -p 8999:8999 \
               -p 8999:8999/udp \
               qbittorrentvpn
-```
-## or use docker-compose:
 ```
 ## or use docker-compose:
 ```
