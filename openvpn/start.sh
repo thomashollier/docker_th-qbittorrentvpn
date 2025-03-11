@@ -167,6 +167,10 @@ if [[ $VPN_ENABLED == "yes" ]]; then
 	sleep 5
 	#exec /bin/bash /etc/openvpn/openvpn.init start &
 	exec /bin/bash /etc/qbittorrent/iptables.sh
+ 	sleep 1
+  	printf "\n################\n\nExternal IP:"
+   	curl http://www.icanhazip.com
+  	printf "\n################\n"
 else
 	exec /bin/bash /etc/qbittorrent/start.sh
 fi
